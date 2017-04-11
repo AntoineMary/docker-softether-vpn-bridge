@@ -7,8 +7,7 @@ ENV LANG="en_US.UTF-8" \
 
 ### SETUP
 COPY assets /assets
-RUN apk update && apk upgrade && \
-    apk add wget make gcc musl-dev readline-dev openssl-dev ncurses-dev su-exec && \
+RUN apk --no-cache add wget make gcc musl-dev readline-dev openssl-dev ncurses-dev libcap su-exec && \
     addgroup softether && adduser -g 'softether' -G softether -s /sbin/nologin -D -H softether && \
     mv /assets/entrypoint.sh / && chmod +x /entrypoint.sh && \
 
@@ -24,12 +23,12 @@ RUN apk update && apk upgrade && \
     # Cleanning
     apk del wget make gcc musl-dev readline-dev openssl-dev ncurses-dev && \
     # Reintroduce necessary libraries
-    apk add libssl1.0	libcrypto1.0 readline ncurses-libs && \
+    apk --no-cache add libssl1.0	libcrypto1.0 readline ncurses-libs && \
     # Removing vpnclient, vpncmd vpnserver and build files
-    cd .. && rm -rf /usr/vpnclient /usr/bin/vpnclient /usr/vpncmd /usr/bin/vpncmd /usr/vpnserver /usr/bin/vpnserver \
-    /var/cache/apk/* /assets SoftEtherVPN-${SOFTETHER_VERSION:1}
+    cd .. && rm -rf /usr/vpnclient /usr/bin/vpnclient /usr/vpncmd /usr/bin/vpncmd /usr/vpnserver /usr/bin/vpnserver /usr/bin/vpnbridge \
+    /assets SoftEtherVPN-${SOFTETHER_VERSION:1}
 
 EXPOSE 443/tcp 992/tcp 1194/udp 5555/tcp
 
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["vpnbridge", "execsvc"]
+CMD ["/usr/vpnbridge/vpnbridge", "execsvc"]
