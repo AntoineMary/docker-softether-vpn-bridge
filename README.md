@@ -10,15 +10,9 @@ If you need other parts :
 ___
 
 # What is SoftEther VPN Bridge
-> SoftEther VPN ("SoftEther" means "Software Ethernet") is one of the world's most powerful and easy-to-use multi-protocol VPN software. It runs on Windows, Linux, Mac, FreeBSD and Solaris.
+> SoftEther VPN Bridge is software that allows you to cascade-connect to a Virtual Hub of SoftEther VPN Server operating at a remote location and create a Layer-2 bridge connection between that VPN connection and a physical network adapter on a computer running SoftEther VPN Bridge. SoftEther VPN Bridge is the ideal software for a computer connected to a remote base LAN when you want to connect the remote base LAN to a VPN configured with SoftEther VPN Server (namely, a Virtual Hub on a SoftEther VPN Server).
 
-> SoftEther VPN is open source. You can use SoftEther for any personal or commercial use for free charge.
-
->SoftEther VPN is an optimum alternative to OpenVPN and Microsoft's VPN servers. SoftEther VPN has a clone-function of OpenVPN Server. You can integrate from OpenVPN to SoftEther VPN smoothly. SoftEther VPN is faster than OpenVPN. SoftEther VPN also supports Microsoft SSTP VPN for Windows Vista / 7 / 8. No more need to pay expensive charges for Windows Server license for Remote-Access VPN function.
-
->SoftEther VPN can be used to realize BYOD (Bring your own device) on your business. If you have smartphones, tablets or laptop PCs, SoftEther VPN's L2TP/IPsec server function will help you to establish a remote-access VPN from your local network. SoftEther VPN's L2TP VPN Server has strong compatible with Windows, Mac, iOS and Android.
-
-[https://www.softether.org/][softether]
+[https://www.softether.org/4-docs/1-manual/5._SoftEther_VPN_Bridge_Manual](https://www.softether.org/4-docs/1-manual/5._SoftEther_VPN_Bridge_Manual)
 
 # About this image
 Versions will follow [Softether VPN Github Repository][softether-repository] tags and [Alpine][alpine-link] update.
